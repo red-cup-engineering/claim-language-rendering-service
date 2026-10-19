@@ -26,5 +26,9 @@
     "translation-receipt",
     "koios-news",
     "red-cup-engineering"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/claim-language-rendering-service.git"
+  }
 }
