@@ -12,9 +12,12 @@
 // the published english fiber is the candidate-text source for English;
 // until then candidates come from outside (see render-claim-in-language.mjs).
 
+import { readFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import { load, FIBERS } from "@lenticule-science/panini";
 
 const FIBER_PACKAGES = FIBERS;
+const resolveFromPanini = createRequire(import.meta.resolve("@lenticule-science/panini")).resolve;
 
 export const FIBER_NAMES = Object.freeze(Object.keys(FIBER_PACKAGES));
 
@@ -29,8 +32,8 @@ export class UnknownFiberError extends Error {
 // Read the fiber package's exact installed version from its own
 // package.json, never hand-copied, so a re-pin cannot drift the receipt.
 async function packageVersion(packageName) {
-  const manifestUrl = import.meta.resolve(`${packageName}/package.json`);
-  const { default: manifest } = await import(manifestUrl, { with: { type: "json" } });
+  const manifestPath = resolveFromPanini(`${packageName}/package.json`);
+  const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   return manifest.version;
 }
 
