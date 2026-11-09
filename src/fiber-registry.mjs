@@ -7,7 +7,7 @@
 // surface-text generator; their exports read FROM text, so through this
 // registry a fiber JUDGES a candidate rendering. A structure -> surface
 // English realizer does exist as revival inventory, unpublished:
-// linguistics-services-section/lib/legacy/2026-07-03-communicating-in-english/src/realizing/realize.mts
+// linguistics-science-services-section/lib/legacy/2026-07-03-communicating-in-english/src/realizing/realize.mts
 // (realizeClause over the same communicating algebra). Reviving it onto
 // the published english fiber is the candidate-text source for English;
 // until then candidates come from outside (see render-claim-in-language.mjs).
