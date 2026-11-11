@@ -9,7 +9,7 @@
     "test": "node --test test/*.test.mjs"
   },
   "dependencies": {
-    "@lenticule-science/panini": "workspace:*"
+    "@lenticule-science/panini": "^0.1.0"
   },
   "exports": {
     "./package.json": "./package.json"
