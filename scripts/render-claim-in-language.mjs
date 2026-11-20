@@ -9,7 +9,7 @@
 
 import { readClaim } from "../src/claim-store.mjs";
 import { loadFiber } from "../src/fiber-registry.mjs";
-import { buildRecord } from "../src/render-claim-in-language.mjs";
+import { buildReceipt } from "../src/render-claim-in-language.mjs";
 
 function parseArgs(argv) {
   const positional = [];
@@ -55,7 +55,7 @@ async function main(argv) {
       ? { kind: flags["obstruction-kind"] ?? "unspecified", detail: flags["obstruction-detail"] ?? "" }
       : null;
 
-  const record = buildRecord({
+  const receipt = buildReceipt({
     subject,
     claimId,
     claim,
@@ -65,7 +65,7 @@ async function main(argv) {
     obstruction,
   });
 
-  process.stdout.write(`${JSON.stringify(record, null, 2)}\n`);
+  process.stdout.write(`${JSON.stringify(receipt, null, 2)}\n`);
 }
 
 const isMain = process.argv[1] && import.meta.url === new URL(process.argv[1], "file://").href;
