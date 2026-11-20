@@ -52,7 +52,7 @@ function sourceOf(subject, claimId, claim) {
  * no candidate rendering was obtained (e.g. a bought-glass dispatch
  * refusal) — never invented text.
  */
-export function buildReceipt({ subject, claimId, claim, fiber, text = null, producedBy = null, obstruction = null }) {
+export function buildRecord({ subject, claimId, claim, fiber, text = null, producedBy = null, obstruction = null }) {
   const source = sourceOf(subject, claimId, claim);
   const target = Object.freeze({ fiber: fiber.fiber, version: fiber.version });
 
